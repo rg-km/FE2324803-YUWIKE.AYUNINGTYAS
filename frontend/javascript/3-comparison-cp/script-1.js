@@ -4,3 +4,10 @@
 const number = parseInt(prompt("Masukan bilangan: "));
 
 // TODO: answer here
+if (number > 0) {
+  console.log("Bilangan Positif");
+} else if (number == 0) {
+  console.log("Bilangan 0");
+} else {
+  console.log("Bilangan Negatif");
+}

@@ -37,10 +37,71 @@
 
 function fixData(line) {
   // TODO: answer here
+  var vokal = ["a", "i", "u", "e", "o"];
+  var konsonan = [
+    "b",
+    "c",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  var hasil = "";
+  var countVokal = 0;
+  var countKonsonan = 0;
+  for (var i = 0; i < line.length; i++) {
+    if (vokal.indexOf(line[i]) !== -1) {
+      countVokal++;
+    }
+    if (konsonan.indexOf(line[i]) !== -1) {
+      countKonsonan++;
+    }
+  }
+  if (countVokal > countKonsonan) {
+    for (var j = 0; j < line.length; j++) {
+      if (vokal.indexOf(line[j]) !== -1) {
+        hasil += "a";
+      } else {
+        hasil += line[j];
+      }
+    }
+  } else if (countVokal < countKonsonan) {
+    for (var k = 0; k < line.length; k++) {
+      if (konsonan.indexOf(line[k]) !== -1) {
+        hasil += "b";
+      } else {
+        hasil += line[k];
+      }
+    }
+  } else {
+    for (var l = 0; l < line.length; l++) {
+      if (vokal.indexOf(line[l]) !== -1) {
+        hasil += "c";
+      } else {
+        hasil += line[l];
+      }
+    }
+  }
+  return hasil;
 }
 
-console.log(fixData('aoi#fdg#ue'))
-console.log(fixData('eh#xyz#oi#'))
-console.log(fixData('#eui#bcl##'))
+console.log(fixData("aoi#fdg#ue"));
+console.log(fixData("eh#xyz#oi#"));
+console.log(fixData("#eui#bcl##"));
 
-module.exports = fixData
+module.exports = fixData;

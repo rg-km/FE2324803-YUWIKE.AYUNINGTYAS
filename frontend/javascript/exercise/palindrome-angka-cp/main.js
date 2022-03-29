@@ -7,17 +7,20 @@
  */
 
 function angkaPalindrome(num) {
-  // TODO: answer here
-  for (var i = num; i < 999999999; i++) {
-    var str = i.toString();
-    var str2 = "";
-    for (var j = 0; j < str.length; j++) {
-      str2 += str[str.length - 1 - j];
-    }
-    if (str2 == str) {
-      return str2;
-    }
+  let leftSide = 1;
+  let rightSide = 2;
+
+  while (leftSide !== rightSide) {
+    num++;
+    let string = num.toString();
+    leftSide = string.slice(0, Math.ceil(string.length / 2));
+    rightSide = string
+      .slice(Math.floor(string.length / 2), string.length)
+      .split("")
+      .reverse()
+      .join("");
   }
+  return num;
 }
 
 console.log(angkaPalindrome(10)); //11

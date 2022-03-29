@@ -37,67 +37,64 @@
 
 function fixData(line) {
   // TODO: answer here
-  var vokal = ["a", "i", "u", "e", "o"];
-  var konsonan = [
-    "b",
-    "c",
-    "d",
-    "f",
-    "g",
-    "h",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  var hasil = "";
-  var countVokal = 0;
-  var countKonsonan = 0;
-  for (var i = 0; i < line.length; i++) {
-    if (vokal.indexOf(line[i]) !== -1) {
+  let countVokal = 0;
+  let countKonsonan = 0;
+  let countVirus = 0;
+  let result = "";
+
+  for (let i = 0; i < line.length; i++) {
+    if (
+      line[i] === "a" ||
+      line[i] === "i" ||
+      line[i] === "u" ||
+      line[i] === "e" ||
+      line[i] === "o"
+    ) {
       countVokal++;
-    }
-    if (konsonan.indexOf(line[i]) !== -1) {
+      // console.log(countVokal);
+    } else if (line[i] === "#") {
+      countVirus++;
+      // console.log(countVirus);
+    } else {
       countKonsonan++;
+      // console.log(countKonsonan);
     }
   }
-  if (countVokal > countKonsonan) {
-    for (var j = 0; j < line.length; j++) {
-      if (vokal.indexOf(line[j]) !== -1) {
-        hasil += "a";
+
+  // jika jumlah konsonan lebih banyak dari jumlah vokal
+  if (countVokal < countKonsonan) {
+    for (let j = 0; j < line.length; j++) {
+      if (line[j] === "#") {
+        result += "a";
+        //   console.log(result);
       } else {
-        hasil += line[j];
+        result += line[j];
+        //   console.log(result);
       }
     }
-  } else if (countVokal < countKonsonan) {
-    for (var k = 0; k < line.length; k++) {
-      if (konsonan.indexOf(line[k]) !== -1) {
-        hasil += "b";
+  } else if (countVokal > countKonsonan) {
+    // jika jumlah vokal lebih banyak dari jumlah konsonan
+    for (let k = 0; k < line.length; k++) {
+      if (line[k] === "#") {
+        result += "b";
       } else {
-        hasil += line[k];
+        result += line[k];
+      }
+    }
+  } else if (countVokal === countKonsonan) {
+    // jika jumlah vokal sama dengan jumlah konsonan
+    for (let l = 0; l < line.length; l++) {
+      if (line[l] === "#") {
+        result += "c";
+      } else {
+        result += line[l];
       }
     }
   } else {
-    for (var l = 0; l < line.length; l++) {
-      if (vokal.indexOf(line[l]) !== -1) {
-        hasil += "c";
-      } else {
-        hasil += line[l];
-      }
-    }
+    // jika tidak ada virus
+    result = line;
   }
-  return hasil;
+  return result;
 }
 
 console.log(fixData("aoi#fdg#ue"));

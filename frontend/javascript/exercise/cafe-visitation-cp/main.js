@@ -30,15 +30,26 @@ function ruangCafe(name, age, money) {
   const latte = 300000;
 
   // TODO: answer here
-  if (name === "") {
-    return "Anda tidak boleh masuk!";
-  } else if (money < juice) {
-    return "Uang tidak cukup. Anda harus pulang.";
-  } else if (age < 17) {
-    return "Anda bisa pesan juice. Sisa uang anda: " + money;
+  let result;
+  // check condition
+  if (name == "") {
+    result = "Anda tidak boleh masuk!";
   } else {
-    return "Anda bisa pesan latte. Sisa uang anda: " + money;
+    switch (true) {
+      case money < 50000:
+        result = "Uang tidak cukup. Anda harus pulang.";
+        break;
+      case money >= 50000 && age < 17:
+        result = `Anda bisa pesan juice. Sisa uang anda: ${money - juice}`;
+        break;
+      case money >= 300000 && age >= 17:
+        result = `Anda bisa pesan latte. Sisa uang anda: ${money - latte}`;
+        break;
+      default:
+        break;
+    }
   }
+  return result;
 }
 
 console.log(ruangCafe("", 21, 2000000));

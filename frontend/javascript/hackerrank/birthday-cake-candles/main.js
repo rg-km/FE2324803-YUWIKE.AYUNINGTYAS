@@ -14,14 +14,18 @@
 function birthdayCakeCandles(candles) {
   // Write your code here
   // TODO: answer here
-  var max = Math.max(...candles);
-  var count = 0;
-  for (var i = 0; i < candles.length; i++) {
-    if (candles[i] == max) {
-      count++;
+  let tallestCandle = candles[0];
+  let tallestCandleCount = 0;
+  for (let i = 0; i < candles.length; i++) {
+    // 1. cari candle tertinggi
+    if (candles[i] > tallestCandle) {
+      tallestCandle = candles[i];
+    }
+    if (tallestCandle === candles[i]) {
+      tallestCandleCount++;
     }
   }
-  return count;
+  return tallestCandleCount;
 }
 
 function main() {

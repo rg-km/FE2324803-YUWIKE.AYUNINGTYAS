@@ -11,7 +11,6 @@
  *  2. INTEGER_ARRAY b
  */
 
-
 // Full Problem: https://www.hackerrank.com/challenges/compare-the-triplets/problem
 
 function compareTriplets(a, b) {
@@ -19,15 +18,14 @@ function compareTriplets(a, b) {
   // TODO: answer here
 }
 function main() {
-
-  const a = [5, 6, 7] // override input
-  const b = [3, 6, 10] // override input
+  const a = [5, 6, 7]; // override input
+  const b = [3, 6, 10]; // override input
 
   const result = compareTriplets(a, b);
 
-  console.log(result)
+  console.log(result);
 }
 
-main() // execute program
+main(); // execute program
 
-module.exports = compareTriplets
+module.exports = compareTriplets;

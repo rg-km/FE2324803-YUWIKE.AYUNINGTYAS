@@ -19,28 +19,34 @@ Lengkapilah function dengan input kata sandi dan output terjemahannya
 */
 
 function terjemahKataSandi(kataSandi) {
-  // code here
-  var kataSandi = kataSandi.split("");
-  var terjemahKataSandi = "";
-  for (var i = 0; i < kataSandi.length; i++) {
-    if (kataSandi[i] == "&") {
-      kataSandi.splice(i, 1);
-    } else if (kataSandi[i] == "%") {
-      kataSandi.splice(i, 1);
-    } else if (kataSandi[i] == "^") {
-      kataSandi.splice(i, 1);
-    } else if (kataSandi[i] == "#") {
-      kataSandi[i] = " ";
-    } else if (kataSandi[i] == "]") {
-      kataSandi[i] = ",";
-    } else if (kataSandi[i] == "+") {
-      kataSandi[i] = "A";
-    } else if (kataSandi[i] == " ") {
-      kataSandi[i] = "E";
-    }
+  // TODO: answer here
+  // inisiate variable regex
+  let regex = /[&%^]/g;
+  if (kataSandi.match(regex)) {
+    kataSandi = kataSandi.replace(regex, "");
   }
-  terjemahKataSandi = kataSandi.join("");
-  return terjemahKataSandi;
+
+  let regex2 = /[ ]/g;
+  if (kataSandi.match(regex2)) {
+    kataSandi = kataSandi.replace(regex2, "E");
+  }
+
+  let regex3 = /[#]/g;
+  if (kataSandi.match(regex3)) {
+    kataSandi = kataSandi.replace(regex3, " ");
+  }
+
+  let regex4 = /[\]]/g;
+  if (kataSandi.match(regex4)) {
+    kataSandi = kataSandi.replace(regex4, ",");
+  }
+
+  let regex5 = /[+]/g;
+  if (kataSandi.match(regex5)) {
+    kataSandi = kataSandi.replace(regex5, "A");
+  }
+
+  return kataSandi;
 }
 
 // TODO: answer here

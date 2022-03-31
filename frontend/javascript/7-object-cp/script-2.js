@@ -7,9 +7,25 @@
 
 let calculator = {
   // Tulis kode di sini
+  read() {
+    this.a = +prompt("Masukkan nilai a: ");
+    this.b = +prompt("Masukkan nilai b: ");
+  },
+  sum() {
+    return this.a + this.b;
+  },
+  substract() {
+    return this.a - this.b;
+  },
+  multiply() {
+    return this.a * this.b;
+  },
+  division() {
+    return this.a / this.b;
+  },
   // TODO: answer here
 };
-  
+
 calculator.read();
 console.log(calculator.sum());
 console.log(calculator.substract());

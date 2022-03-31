@@ -14,18 +14,31 @@
 function birthdayCakeCandles(candles) {
   // Write your code here
   // TODO: answer here
-  let tallestCandle = candles[0];
-  let tallestCandleCount = 0;
-  for (let i = 0; i < candles.length; i++) {
-    // 1. cari candle tertinggi
+  var tallestCandle = 0;
+  for (var i = 0; i < candles.length; i++) {
     if (candles[i] > tallestCandle) {
       tallestCandle = candles[i];
     }
-    if (tallestCandle === candles[i]) {
-      tallestCandleCount++;
+  }
+  var count = 0;
+  for (var i = 0; i < candles.length; i++) {
+    if (candles[i] === tallestCandle) {
+      count++;
     }
   }
-  return tallestCandleCount;
+  return count;
+  // let tallestCandle = candles[0];
+  // let tallestCandleCount = 0;
+  // for (let i = 0; i < candles.length; i++) {
+  //   // 1. cari candle tertinggi
+  //   if (candles[i] > tallestCandle) {
+  //     tallestCandle = candles[i];
+  //   }
+  //   if (tallestCandle === candles[i]) {
+  //     tallestCandleCount++;
+  //   }
+  // }
+  // return tallestCandleCount;
 }
 
 function main() {

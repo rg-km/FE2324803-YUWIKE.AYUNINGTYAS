@@ -14,6 +14,19 @@
 function gradingStudents(grades) {
   // Write your code here
   // TODO: answer here
+  let result = [];
+  for (let i = 0; i < grades.length; i++) {
+    if (grades[i] < 38) {
+      result.push(grades[i]);
+    } else {
+      if (grades[i] % 5 >= 3) {
+        console.log(Math.ceil(grades[i] / 5) * 5);
+      } else {
+        result.push(grades[i]);
+      }
+    }
+  }
+  return result;
 }
 
 function main() {
@@ -29,4 +42,4 @@ function main() {
 
 main(); // execute program
 
-module.exports = gradingStudents
+module.exports = gradingStudents;

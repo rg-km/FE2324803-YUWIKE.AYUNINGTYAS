@@ -191,26 +191,27 @@ var quotes = [
 ];
 
 // TODO: answer here
+const quoteText = document.getElementById("random-quote");
+const quoteAuthor = document.getElementById("author");
+const quoteCitation = document.getElementById("citation");
+const quoteYear = document.getElementById("year");
+const generateButton = document.getElementsByClassName("btn-generate")[0];
+generateButton.addEventListener("click", displayQuote);
 
 function getQuote() {
   // TODO: answer here
-  const randomNumber = Math.floor(Math.random() * quotes.length);
-  return quotes[randomNumber];
+  let Number = Math.floor(Math.random() * quotes.length);
+  return quotes[Number];
 }
 
 function displayQuote() {
   // TODO: answer here
   const quote = getQuote();
-  let html = "";
-  if (quote.citation) {
-    html += `<p class="quote">${quote.quote}</p>`;
-    html += `<p class="source">${quote.author}`;
-    html += `<span class="citation">${quote.citation}</span>`;
-    html += `<span class="year">${quote.year}</span>`;
-    html += `</p>`;
-  } else {
-    html += `<p class="quote">${quote.quote}</p>`;
-    html += `<p class="source">${quote.author}</p>`;
-  }
-  document.getElementById("quote-box").innerHTML = html;
+  quoteText.innerText = quote.quote;
+  quoteAuthor.innerText = quote.author;
+  quoteCitation.innerText = quote.citation ? quote.citation : "";
+  quoteYear.innerText = quote.year ? quote.year : "";
 }
+
+displayQuote();
+generateButton.addEventListener("click", displayQuote);

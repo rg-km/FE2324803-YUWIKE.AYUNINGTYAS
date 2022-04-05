@@ -5,15 +5,15 @@
   "repository": "https://github.com/ruang-guru/playground.git",
   "author": "",
   "license": "MIT",
- "scripts": {
+  "scripts": {
     "test": "jest",
-    "test:cypress": "cypress run"
+    "test:cypress": "cypress run",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
     "cypress": "^9.5.3",
     "jest": "^27.5.1"
   },
-  
   "dependencies": {
     "cypress": "^9.5.3"
   }

@@ -1,21 +1,21 @@
 ;FFMETADATA1
 [CHAPTER]
 TIMEBASE=1/1000
-START=4896
-END=6677
+START=3472
+END=5150
 title=counter-app add adds the number
 [CHAPTER]
 TIMEBASE=1/1000
-START=8176
-END=8472
+START=6574
+END=6835
 title=counter-app number is initialized to 0
 [CHAPTER]
 TIMEBASE=1/1000
-START=7535
-END=8775
+START=5854
+END=7098
 title=counter-app substract substract the number
 [CHAPTER]
 TIMEBASE=1/1000
-START=9536
-END=10017
+START=7982
+END=8344
 title=counter-app substract rejects negative number

@@ -190,28 +190,36 @@ var quotes = [
   },
 ];
 
+let quote = document.getElementById("random-quote");
+let author = document.getElementsByClassName("author");
+let citation = document.getElementsByClassName("citation");
+let year = document.getElementsByClassName("year");
+let button = document.getElementsByTagName("button");
+
 // TODO: answer here
-const quoteText = document.getElementById("random-quote");
-const quoteAuthor = document.getElementById("author");
-const quoteCitation = document.getElementById("citation");
-const quoteYear = document.getElementById("year");
-const generateButton = document.getElementsByClassName("btn-generate")[0];
-generateButton.addEventListener("click", displayQuote);
+button[0].addEventListener("click", () => {
+  const n = getQuote();
+  displayQuote(n);
+});
 
 function getQuote() {
-  // TODO: answer here
-  let Number = Math.floor(Math.random() * quotes.length);
-  return quotes[Number];
+  const index = Math.floor(Math.random() * (quotes.length - 1));
+  return index;
 }
 
-function displayQuote() {
-  // TODO: answer here
-  const quote = getQuote();
-  quoteText.innerText = quote.quote;
-  quoteAuthor.innerText = quote.author;
-  quoteCitation.innerText = quote.citation ? quote.citation : "";
-  quoteYear.innerText = quote.year ? quote.year : "";
+function displayQuote(n) {
+  const currQuote = quotes[n];
+  quote.innerText = currQuote.quote;
+  author[0].innerText = currQuote.author;
+  if (currQuote.hasOwnProperty("citation")) {
+    citation[0].innerText = currQuote.citation;
+  } else {
+    citation[0].innerText = "";
+  }
+  if (currQuote.hasOwnProperty("year")) {
+    year[0].innerText = currQuote.year;
+  } else {
+    year[0].innerText = "";
+  }
+  console.log(currQuote);
 }
-
-displayQuote();
-generateButton.addEventListener("click", displayQuote);

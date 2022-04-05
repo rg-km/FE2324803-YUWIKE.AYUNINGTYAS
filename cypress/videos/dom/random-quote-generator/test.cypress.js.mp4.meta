@@ -1,0 +1,11 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-16669
+END=5170
+title=generate-random-quote generate-quote display quote
+[CHAPTER]
+TIMEBASE=1/1000
+START=26086
+END=27018
+title=generate-random-quote generate-quote display author

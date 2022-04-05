@@ -1,11 +1,11 @@
 ;FFMETADATA1
 [CHAPTER]
 TIMEBASE=1/1000
-START=3837
-END=4976
+START=4210
+END=5309
 title=generate-random-quote generate-quote display quote
 [CHAPTER]
 TIMEBASE=1/1000
-START=5741
-END=6119
+START=6063
+END=6430
 title=generate-random-quote generate-quote display author

@@ -6,9 +6,15 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:cypress": "cypress run",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
+    "cypress": "^9.5.3",
     "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "cypress": "^9.5.3"
   }
 }

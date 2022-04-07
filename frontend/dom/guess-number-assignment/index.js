@@ -10,38 +10,55 @@ Uncomment variable dibawah ini untuk mulai mengerjakan. dilarang mengganti nama 
 // let checkBtn = tombol untuk melakuan pengecekan angka pada input
 // let score = nilai yang akan ditampilakan
 
-let quote = document.getElementById("random-quote");
-let author = document.getElementsByClassName("author");
-let citation = document.getElementsByClassName("citation");
-let year = document.getElementsByClassName("year");
-let button = document.getElementsByTagName("button");
+let newGameBtn = document.getElementsByClassName("new-game");
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+let message = document.getElementsByClassName("message");
+let displayScore = document.getElementsByClassName("score");
+let input = document.getElementsByTagName("input");
+let checkBtn = document.getElementsByClassName("check");
+let score = 10;
 
 // TODO: answer here
-button[0].addEventListener("click", () => {
-  const n = getQuote();
-  displayQuote(n);
-});
+let hiddenNumber = document.getElementsByClassName("number");
 
-function getQuote() {
-  const index = Math.floor(Math.random() * (quotes.length - 1));
-  return index;
+checkBtn[0].addEventListener("click", checkNumber);
+newGameBtn[0].addEventListener("click", resetGame);
+function displayMessage(msg) {
+  // TODO: answer here
+  message[0].innerText = msg;
 }
 
-function displayQuote(n) {
-  const currQuote = quotes[n];
-  quote.innerText = currQuote.quote;
-  author[0].innerText = currQuote.author;
-  if (currQuote.hasOwnProperty("citation")) {
-    citation[0].innerText = currQuote.citation;
+function resetGame() {
+  // TODO: answer here
+  displayMessage("Lets start guessing...");
+  score = 10;
+  hiddenNumber[0].innerText = "?";
+  randomNumber = Math.floor(Math.random() * 10) + 1;
+  //dilarang menghapus code dibawah ini!
+  document.getElementById("hidden-number").innerHTML = randomNumber;
+}
+
+function checkNumber() {
+  // TODO: answer here
+  let userInput = input[0].valueAsNumber;
+  if (userInput != randomNumber) {
+    if (userInput <= 0 || userInput > 10) {
+      displayMessage("Guess any number between 1 and 10");
+      score -= 1;
+    } else if (userInput < randomNumber) {
+      displayMessage("Too small, buddy!");
+      score -= 1;
+    } else if (userInput > randomNumber) {
+      displayMessage("Oww... that's too big!");
+      score -= 1;
+    }
+    displayScore[0].innerText = score;
   } else {
-    citation[0].innerText = "";
+    displayMessage("Yeay! you guessed it!");
+    hiddenNumber[0].innerText = randomNumber;
+    randomNumber = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("hidden-number").innerHTML = randomNumber;
   }
-  if (currQuote.hasOwnProperty("year")) {
-    year[0].innerText = currQuote.year;
-  } else {
-    year[0].innerText = "";
-  }
-  console.log(currQuote);
 }
 
 //dilarang menghapus code dibawah ini!

@@ -37,7 +37,7 @@ class Calculator {
     return this;
   }
   squareRoot(num) {
-    this.operand = Math.sqrt(this.operand);
+    this.operand = Math.sqrt(this.operand, num);
     return this;
   }
 }

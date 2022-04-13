@@ -19,12 +19,12 @@ class Thief extends Player {
   steal(player) {
     // TODO: answer here
     if (player.randomizer() <= this.getStealChance() && player.getGold() >= 5) {
-      let goldTemp1 = 0;
-      let goldTemp2 = 0;
-      goldTemp1 = this.getGold() + 5;
-      goldTemp2 = player.getGold() - 5;
-      this.setGold(goldTemp1);
-      player.setGold(goldTemp2);
+      let gold1 = 0;
+      let gold2 = 0;
+      gold1 = this.getGold() + 5;
+      gold2 = player.getGold() - 5;
+      this.setGold(gold1);
+      player.setGold(gold2);
       if (player.job === "Trickster") {
         player.setHasBeenRobbed(false);
         return player.distractionPurse(this);

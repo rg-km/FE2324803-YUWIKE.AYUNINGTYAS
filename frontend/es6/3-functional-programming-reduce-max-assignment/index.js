@@ -9,7 +9,10 @@
 
 const maxFromArray = (numbers) => {
   // TODO: answer here
+  const max = numbers.reduce((acc, curr) => {
+    return acc > curr ? acc : curr;
+  });
   return max;
 };
 
-module.exports = maxFromArray
+module.exports = maxFromArray;

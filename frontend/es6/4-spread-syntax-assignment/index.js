@@ -7,6 +7,8 @@
 
 const mergeTwoObjects = (firstObject, secondObject) => {
   // TODO: answer here
+  const result = { ...firstObject, ...secondObject };
+  return result;
 };
 
-module.exports = mergeTwoObjects
+module.exports = mergeTwoObjects;

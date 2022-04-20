@@ -16,18 +16,10 @@
 
 const findAnimal = (bush) => {
   // TODO: answer here
-  let animal = "";
-
-  for (let i = 0; i < bush.length; i++) {
-    if (bush[i] === bush[i].toUpperCase()) {
-      animal += bush[i].toLowerCase();
-    } else {
-      animal += bush[i].toUpperCase();
-    }
-  }
-  return animal;
+  let arr = bush.split("");
+  let animals = arr.filter((animal) => animal.toLowerCase() === animal);
+  return animals.join("");
 };
-
 console.log(findAnimal("UkUNFYGaFYFYmtNUHbJKHJJiOKDJKDnKFKFLgLLF")); // kambing
 
 module.exports = findAnimal;

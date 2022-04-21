@@ -1,35 +1,3 @@
-/**
- * Buatlah fungsi untuk mengambil data karakter pada film starwars, beserta semua film yang dimainkan oleh karakter tersebut.
- *
- * Contoh: people/1/
- * Output yang harapkan:
- * {
- *  "name": "Luke Skywalker",
- *  "height": "172",
- *  "mass": "77",
- *  "hair_color": "blond",
- *  "skin_color": "fair",
- *  "eye_color": "blue",
- *  "birth_year": "19BBY",
- *  "gender": "male",
- *  "films": [
- *    {
- *      "title": "The Empire Strikes Back",
- *      "episode_id": 5,
- *    },
- *    {
- *      "title": "Revenge of the Sith",
- *      "episode_id": 3,
- *     }
- *  ]
- *
- * Catatan:
- * - Lihatlah dan coba pahami dokumentasi dari endpont berikut: https://swapi.dev/documentation#people dan https://swapi.dev/documentation#films
- * - Kedua endpoint tersebut akan meliki semua data yang dibutuhan dari output yang diharapkan dari fungsi ini.
- * - Pastikan fungsi yang kalian buat mengembalikan format data yang sesuai dengan yang diharapkan, jika tidak test akan error.
- * - Untuk mempermudah perulangan kalian bisa menggunakan perintah Promise.all(), https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
- */
-
 const https = require("https"); // Dibutuhkan sebagai protokol untuk akses data.
 
 /**
@@ -63,6 +31,30 @@ function promiseStarWarsData(url) {
 
 function getDataPeopleByIdWithFilms(peopleId) {
   // TODO: answer here
-}
+  return new Promise((resolve, reject) => {
+    promiseStarWarsData(`https://swapi.dev/api/people/${peopleId}`)
+      .then((res) => {
+        let result = [];
+        let promise = [];
 
+        for (let i = 0; i < res.films.length; i++) {
+          promise.push(
+            new Promise((resolve, reject) => {
+              promiseStarWarsData(res.films[i]).then((response) =>
+                resolve({
+                  title: response.title,
+                  episode_id: response.episode_id,
+                })
+              );
+            })
+          );
+        }
+        Promise.all(promise).then((values) => {
+          resolve({ ...res, films: values });
+        });
+      })
+      .catch((err) => reject(err));
+  });
+}
+getDataPeopleByIdWithFilms(1);
 module.exports = { getDataPeopleByIdWithFilms };

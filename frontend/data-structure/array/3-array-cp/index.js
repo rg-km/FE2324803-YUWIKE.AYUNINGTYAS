@@ -14,18 +14,29 @@
 // Ada kemungkinan bahwa beberapa kalimat mengandung jumlah kata yang sama.
 
 function mostWordsFound(sentences) {
-    let max = 0;
-    for (let i = 0; i < sentences.length; i++) {
-        let count = countWords(sentences[i]);
-        // TODO: answer here
+  let max = 0;
+  for (let i = 0; i < sentences.length; i++) {
+    let count = countWords(sentences[i]);
+    // TODO: answer here
+    if (count > max) {
+      max = count;
     }
-    return max
+  }
+  return max;
 }
 
 function countWords(sentence) {
-    return 0; // TODO: replace this
+  let count = 0;
+  let words = sentence.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    count++;
+  }
+  return count;
+
+  return 0; // TODO: replace this
 }
 
 module.exports = {
-    mostWordsFound, countWords
-}
+  mostWordsFound,
+  countWords,
+};

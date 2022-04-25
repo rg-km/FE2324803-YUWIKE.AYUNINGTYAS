@@ -14,11 +14,11 @@
 
 function sort(arr) {
   for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let tmp = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = tmp;
       }
     }
   }
@@ -26,13 +26,18 @@ function sort(arr) {
 }
 
 function rotateLeft(d, arr) {
-  let temp = [];
   for (let i = 0; i < d; i++) {
-    temp.push(arr.pop());
+    let tmp = arr[0]; // mengambil setiap index pertama
+
+    // loop geser setiap index ke kiri
+    for (let j = 0; j < arr.length - 1; j++) {
+      arr[j] = arr[j + 1];
+    }
+
+    // index terakhir diisi dengan index pertama
+    arr[arr.length - 1] = tmp;
   }
-  for (let i = 0; i < temp.length; i++) {
-    arr.unshift(temp[i]);
-  }
+
   return arr; // TODO: replace this
 }
 

@@ -2,7 +2,10 @@
 // Gunakan array untuk menyimpan data pada stack. Pada kasus ini, data yang disimpan berupa integer.
 
 module.exports = class Stack {
-    constructor() {
-        // TODO: answer here
-    }
-}
+  constructor() {
+    // TODO: answer here
+    this.data = [];
+    this.top = -1;
+    this.size = 10;
+  }
+};

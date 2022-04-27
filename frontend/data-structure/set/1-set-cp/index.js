@@ -11,10 +11,14 @@
 // Output: {}
 // Explanation: tidak ada intersection dari a dan b
 
-
 function intersection(setA, setB) {
-    let result = new Set();
-    return result; // TODO: replace this
+  let result = new Set();
+  for (let e of setB) {
+    if (setA.has(e)) {
+      result.add(e);
+    }
+  }
+  return result; // TODO: replace this
 }
 
 let setA = new Set(["Java", "Python", "Javascript", "C ++", "C#"]);

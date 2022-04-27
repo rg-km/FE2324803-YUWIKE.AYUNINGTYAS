@@ -18,16 +18,31 @@
 
 function anagramChecker(str1, str2) {
   // TODO: replace this
-  let str1Map = new Map();
-  let str2Map = new Map();
-
+  const str1Hash = {};
+  const str2Hash = {};
+  if (str1.length !== str2.length) {
+    return "Bukan Anagram";
+  }
   for (let i = 0; i < str1.length; i++) {
-    if (str1Map.has(str1[i])) {
-      str1Map.set(str1[i], str1Map.get(str1[i]) + 1);
+    if (str1Hash[str1[i]]) {
+      str1Hash[str1[i]] += 1;
     } else {
-      str1Map.set(str1[i], 1);
+      str1Hash[str1[i]] = 1;
     }
   }
+  for (let i = 0; i < str2.length; i++) {
+    if (str2Hash[str2[i]]) {
+      str2Hash[str2[i]] += 1;
+    } else {
+      str2Hash[str2[i]] = 1;
+    }
+  }
+  for (let key in str1Hash) {
+    if (str1Hash[key] !== str2Hash[key]) {
+      return "Bukan Anagram";
+    }
+  }
+  return "Anagram";
 }
 
 console.log(anagramChecker("keen", "knee"));

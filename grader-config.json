@@ -2,9 +2,9 @@
 	"CheckpointBranch": "cp-1651117702",
 	"Email": "yuwike.19009@mhs.unesa.ac.id",
 	"GithubPersonalAccessToken": "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",
-	"GraderApiAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6Inl1d2lrZS4xOTAwOUBtaHMudW5lc2EuYWMuaWQiLCJleHAiOjE2NTExMTg2MDIsIm5hbWUiOiJZVVdJS0UgQVlVTklOR1RZQVMiLCJyb2xlIjoic3R1ZGVudCIsInNlcmlhbCI6IkZFMjMyNDgwMyJ9.SVZUECrgJ2wZzXzJLziM2OBJZ9bI7N7t3AJ5JYz7QkU",
-	"GraderApiAccessTokenExpires": "1651118602",
-	"GraderApiRefreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inl1d2lrZS4xOTAwOUBtaHMudW5lc2EuYWMuaWQiLCJleHAiOjE2NjY2Njk3MDIsIm5hbWUiOiJZVVdJS0UgQVlVTklOR1RZQVMiLCJyb2xlIjoic3R1ZGVudCIsInNlcmlhbCI6IkZFMjMyNDgwMyJ9.ciivC7j_2h95zDouCLiiuDpyOaiFM-xwbnGyp4icKC8",
-	"GraderApiRefreshTokenExpires": "1666669702",
+	"GraderApiAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJlbWFpbCI6Inl1d2lrZS4xOTAwOUBtaHMudW5lc2EuYWMuaWQiLCJleHAiOjE2NTExMjAyNDAsIm5hbWUiOiJZVVdJS0UgQVlVTklOR1RZQVMiLCJyb2xlIjoic3R1ZGVudCIsInNlcmlhbCI6IkZFMjMyNDgwMyJ9.W4jpli5PS71tB-UqBzCIurALWc9MjF2O1b455EO-e5k",
+	"GraderApiAccessTokenExpires": "1651120240",
+	"GraderApiRefreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inl1d2lrZS4xOTAwOUBtaHMudW5lc2EuYWMuaWQiLCJleHAiOjE2NjY2NzEzNDAsIm5hbWUiOiJZVVdJS0UgQVlVTklOR1RZQVMiLCJyb2xlIjoic3R1ZGVudCIsInNlcmlhbCI6IkZFMjMyNDgwMyJ9.XpOPZtHcjdy5cH4aegEcJxAnK4PjStg8rtCOtzVsxUw",
+	"GraderApiRefreshTokenExpires": "1666671340",
 	"RepositoryUrl": "https://github.com/rg-km/FE2324803-YUWIKE.AYUNINGTYAS"
 }

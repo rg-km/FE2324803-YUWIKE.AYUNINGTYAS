@@ -29,4 +29,8 @@ setA = new Set("Java", "Python");
 setB = new Set("Swift");
 console.log(intersection(setA, setB)); // {}
 
+<<<<<<< HEAD
 module.exports = { intersection };
+=======
+module.exports = { intersection };
+>>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

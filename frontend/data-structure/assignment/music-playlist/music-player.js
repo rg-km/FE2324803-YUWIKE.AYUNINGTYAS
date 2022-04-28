@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Song = require("./song");
 const Playlist = require("./playlist");
 
@@ -26,3 +27,21 @@ module.exports = class MusicPlayer {
     }
   }
 };
+=======
+const Song = require('./song')
+const Playlist = require('./playlist')
+
+module.exports = class MusicPlayer {
+    constructor(playlist) {
+        this.playlist = playlist
+    }
+
+    addSong(song) {
+        // TODO: answer here
+    }
+
+    play() {
+        // TODO: answer here
+    }
+}
+>>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

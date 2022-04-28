@@ -1,8 +1,8 @@
 /**
  * Lengkapilah function dibawah ini dimana terdapat function groupBy yang mengelompokkan elemen dari array dengan nilai yang dikembalikan dari callback function (isOdd) melalui argumen.
- *
+ * 
  * isOdd sendiri merupakan sebuah function yang akan melalukan validasi apakah tahun keliahiran dari data ganjil atau genap, Nilai yang dikembalikan berupa true atau false.
- *
+ * 
  * input:
  * [
  *    {
@@ -21,8 +21,8 @@
  *      place: 'Bogor',
  *    },
  *  ]
- *
- * output:
+ * 
+ * output: 
  *  { false:
  *    [ { name: 'Dito', year: 1992, place: 'Bogor' },
  *      { name: 'Uli', year: 1996, place: 'Bogor' } ],

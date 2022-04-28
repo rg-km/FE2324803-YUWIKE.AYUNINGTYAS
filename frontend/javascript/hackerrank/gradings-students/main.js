@@ -14,6 +14,7 @@
 function gradingStudents(grades) {
   // Write your code here
   // TODO: answer here
+<<<<<<< HEAD
   var result = [];
   for (var i = 0; i < grades.length; i++) {
     if (grades[i] < 38) {
@@ -41,6 +42,8 @@ function gradingStudents(grades) {
   //     }
   //   }
   //   return result;
+=======
+>>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 }
 
 function main() {
@@ -56,4 +59,8 @@ function main() {
 
 main(); // execute program
 
+<<<<<<< HEAD
 module.exports = gradingStudents;
+=======
+module.exports = gradingStudents
+>>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

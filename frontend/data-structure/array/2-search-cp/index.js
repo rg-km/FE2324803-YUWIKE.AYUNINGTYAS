@@ -16,4 +16,8 @@ let cars2 = ["Ford", "BMW", "Audi", "Mercedes"];
 result = searchMatch(cars1, cars2);
 console.log(result);
 
+<<<<<<< HEAD
 module.exports = { searchMatch };
+=======
+module.exports = {searchMatch}
+>>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

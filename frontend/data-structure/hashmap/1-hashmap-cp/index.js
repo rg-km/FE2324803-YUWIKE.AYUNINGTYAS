@@ -34,6 +34,11 @@ console.log(ageDistribution(people));
 console.log(groupByAge(people));
 
 module.exports = {
+<<<<<<< HEAD
   ageDistribution,
   groupByAge,
 };
+=======
+    ageDistribution, groupByAge
+}
+>>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

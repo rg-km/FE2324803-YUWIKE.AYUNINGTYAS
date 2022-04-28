@@ -49,3 +49,27 @@ module.exports = class TextEditor {
 // console.log(output);
 // consolo.log(te.undoStack.length);
 // consolo.log(te.redoStack.length);
+
+// test case :
+//  let te = new TextEditor()
+//                 te.write("a")
+//                 te.undo()
+//                 te.redo()
+//                 let output = te.read()
+// console.log(output)
+// consolo.log(te.undoStack.length)
+// consolo.log(te.redoStack.length)
+// this.undoStack = 'a'
+// this.undoArrStack = ['a']
+// this.redoStack = ''
+
+// this.undoArrStack = []
+// poopedValue = 'a'
+// this.redoArrStack = ['a']
+// this.redoStack = 'a'
+
+// redo()
+// poopedValue = 'a'
+// this.redoArrStack = []
+// this.undoArrStack = ['a']
+// this.redoStack = ''

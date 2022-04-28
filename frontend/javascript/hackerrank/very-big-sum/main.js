@@ -14,14 +14,11 @@
 function aVeryBigSum(ar) {
   // Complete this function
   // TODO: answer here
-<<<<<<< HEAD
   let result = 0;
   for (let i = 0; i < ar.length; i++) {
     result += ar[i];
   }
   return result;
-=======
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 }
 
 function main() {
@@ -32,8 +29,4 @@ function main() {
 
 main(); // execute program
 
-<<<<<<< HEAD
 module.exports = aVeryBigSum;
-=======
-module.exports = aVeryBigSum
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

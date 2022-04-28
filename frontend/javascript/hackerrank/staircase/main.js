@@ -13,7 +13,6 @@
 function staircase(n) {
   // Write your code here
   // TODO: answer here
-<<<<<<< HEAD
   let result = "";
   for (let i = 0; i < n; i++) {
     let space = "";
@@ -48,21 +47,8 @@ function main() {
 
   let result = staircase(n);
   console.log(result);
-=======
-}
-
-function main() {
-  const n = 6
-
-  let result = staircase(n);
-  console.log(result)
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 }
 
 main(); // execute program
 
-<<<<<<< HEAD
 module.exports = staircase;
-=======
-module.exports = staircase
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

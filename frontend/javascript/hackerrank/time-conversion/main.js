@@ -9,16 +9,11 @@
  * The function accepts STRING s as parameter.
  */
 
-<<<<<<< HEAD
-=======
-
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 // Full Problem: https://www.hackerrank.com/challenges/time-conversion/problem
 
 function timeConversion(s) {
   // Write your code here
   // TODO: answer here
-<<<<<<< HEAD
   var time = s.split(":");
   var hour = parseInt(time[0]);
   var minute = time[1];
@@ -53,28 +48,15 @@ function timeConversion(s) {
   //   result += s[i];
   // }
   // return result;
-=======
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 }
 
 function main() {
   //var s = readLine();
-<<<<<<< HEAD
   var s = "07:05:45PM"; // override input
   var result = timeConversion(s);
   console.log(result);
-=======
-  var s = '07:05:45PM'; // override input
-  var result = timeConversion(s);
-  console.log(result);
-
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 }
 
 main(); // execute program
 
-<<<<<<< HEAD
 module.exports = timeConversion;
-=======
-module.exports = timeConversion
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

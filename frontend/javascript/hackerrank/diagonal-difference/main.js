@@ -3,26 +3,17 @@
 // - Difficulty: Easy
 
 /*
-<<<<<<< HEAD
  * Complete the 'diagonalDifference' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts 2D_INTEGER_ARRAY arr as parameter.
  */
-=======
-* Complete the 'diagonalDifference' function below.
-*
-* The function is expected to return an INTEGER.
-* The function accepts 2D_INTEGER_ARRAY arr as parameter.
-*/
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 
 // Full Problem: https://www.hackerrank.com/challenges/diagonal-difference/problem
 
 function diagonalDifference(arr) {
   // Write your code here
   // TODO: answer here
-<<<<<<< HEAD
   // index primary: [0, 0], [1, 1], [2, 2]
   // index secondary: [0, 2], [1, 1], [2, 0]
 
@@ -45,8 +36,6 @@ function diagonalDifference(arr) {
     }
   }
   return Math.abs(primary - secondary);
-=======
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
 }
 
 function main() {
@@ -54,11 +43,7 @@ function main() {
   var a = [
     [11, 2, 4],
     [4, 5, 6],
-<<<<<<< HEAD
     [10, 8, -12],
-=======
-    [10, 8, -12]
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492
   ]; // override input
   let result = diagonalDifference(a);
   console.log(result);
@@ -66,8 +51,4 @@ function main() {
 
 main(); // execute program
 
-<<<<<<< HEAD
 module.exports = diagonalDifference;
-=======
-module.exports = diagonalDifference
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

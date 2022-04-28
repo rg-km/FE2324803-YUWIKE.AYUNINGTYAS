@@ -50,10 +50,5 @@ console.log(anagramChecker("kee", "knn"));
 console.log(anagramChecker("fried", "fired"));
 
 module.exports = {
-<<<<<<< HEAD
   anagramChecker,
 };
-=======
-    anagramChecker
-}
->>>>>>> da2810cc55b37ed159a385aff35ceafadd64d492

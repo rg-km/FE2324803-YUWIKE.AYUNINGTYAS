@@ -54,15 +54,6 @@ require (
 )
 
 require (
-	github.com/gdamore/encoding v1.0.0 // indirect
-	github.com/gdamore/tcell/v2 v2.4.1-0.20210905002822-f057f0a857a1 // indirect
-	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
-	github.com/mattn/go-runewidth v0.0.13 // indirect
-	github.com/rivo/uniseg v0.2.0 // indirect
-	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d // indirect
-)
-
-require (
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/gin-gonic/gin v1.7.7
 	github.com/golang-jwt/jwt/v4 v4.4.1

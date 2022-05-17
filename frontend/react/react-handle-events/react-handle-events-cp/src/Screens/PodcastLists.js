@@ -11,14 +11,17 @@ const PodcastLists = () => {
   const [podcastList, setPodcastList] = useState([]);
   const [showFormModal, setShowFormModal] = useState(false);
   const [formModalType, setFormModalType] = useState("ADD");
-  const [podcastId, setPodcastId] = useState(0)
+  const [podcastId, setPodcastId] = useState(0);
 
   const getPodcastListData = async () => {
     // TODO: answer here
+    const response = await axios.get(Constants.API_URL + "/podcasts");
+    setPodcastList(response.data);
   };
 
   useEffect(() => {
     // TODO: answer here
+    getPodcastListData();
   }, []);
 
   return (
@@ -34,6 +37,15 @@ const PodcastLists = () => {
         </Button>
         {podcastList.map((item) => {
           // TODO: answer here
+          return;
+          <PodcastListItem
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            setFormModalType={setFormModalType}
+            setPodcastId={setPodcastId}
+            setShowFormModal={setShowFormModal}
+          />;
         })}
       </div>
       <PodcastFormModal

@@ -3,18 +3,15 @@
 module.exports = class Stack {
   constructor() {
     // TODO: answer here
-    this.data = [];
+    this.stack = [];
+    this.data = 10;
     this.top = -1;
-    this.size = 10;
   }
 
   push(elemen) {
     // TODO: answer here
-    if (this.top >= 10) {
-      return "Stack Overflow";
-    } else {
-      this.top++;
-      this.data[this.top] = elemen;
-    }
+    this.top += 1;
+    this.data = elemen;
+    return this.stack.push(elemen);
   }
 };

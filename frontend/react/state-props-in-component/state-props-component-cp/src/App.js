@@ -13,6 +13,11 @@ export const Item = (props) => {
           aria-label={`minus-button-${id}`}
           onClick={() => {
             // TODO: answer here
+            if (item > 0) {
+              setItem(item - 1);
+            } else {
+              setItem(0);
+            }
           }}
         >
           -
@@ -28,6 +33,11 @@ export const Item = (props) => {
           aria-label={`add-button-${id}`}
           onClick={() => {
             // TODO: answer here
+            if (item < 10) {
+              setItem(item + 1);
+            } else {
+              setItem(10);
+            }
           }}
         >
           +
@@ -40,6 +50,7 @@ export const Item = (props) => {
 function App() {
   //Add state for total
   // TODO: answer here
+  const [total, setTotal] = React.useState(0);
 
   const dataDummy = [
     {
@@ -69,15 +80,21 @@ function App() {
     <div className="state-props-2" aria-label="AppRoot">
       <h3>Keranjang Belanja</h3>
       <div className="box-container">
-        {dataDummy.map((element, index) => (
-          // TODO: answer here
-          <Item
-            image={element.image}
-            title={element.title}
-            id={element.id}
-            key={index}
-          />
-        ))}
+        {dataDummy.map(
+          (element, index) => (
+            // TODO: answer here
+            setTotal(total + element.id),
+            showAlert(total > 10),
+            (
+              <Item
+                image={element.image}
+                title={element.title}
+                id={element.id}
+                key={index}
+              />
+            )
+          )
+        )}
       </div>
       <div className="end-section">
         <h4>

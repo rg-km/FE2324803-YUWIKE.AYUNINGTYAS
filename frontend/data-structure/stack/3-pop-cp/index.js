@@ -3,26 +3,24 @@
 module.exports = class Stack {
   constructor() {
     // TODO: answer here
-    this.stack = [];
-    this.data = 10;
+    this.data = [];
     this.top = -1;
   }
 
   push(elemen) {
     // TODO: answer here
     this.top += 1;
-    this.data = elemen;
-    return this.stack.push(elemen);
+    return this.data.push(elemen);
   }
 
   pop() {
     // TODO: answer here
-    if (this.isEmpty()) {
+    if (this.data.length == 0) {
       throw "stack underflow";
     } else {
-      let poppedValue = this.stack.pop();
+      let poopedValue = this.data.pop();
       this.top -= 1;
-      return poppedValue;
+      return poopedValue;
     }
   }
 };

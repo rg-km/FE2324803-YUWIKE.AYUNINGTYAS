@@ -18,31 +18,34 @@
 
 function anagramChecker(str1, str2) {
   // TODO: replace this
-  const str1Hash = {};
-  const str2Hash = {};
-  if (str1.length !== str2.length) {
-    return "Bukan Anagram";
-  }
-  for (let i = 0; i < str1.length; i++) {
-    if (str1Hash[str1[i]]) {
-      str1Hash[str1[i]] += 1;
+  let str1Arr = str1.split("");
+  let str2Arr = str2.split("");
+  let str1Obj = {};
+  let str2Obj = {};
+  let result = "";
+  for (let i = 0; i < str1Arr.length; i++) {
+    if (str1Obj[str1Arr[i]]) {
+      str1Obj[str1Arr[i]]++;
     } else {
-      str1Hash[str1[i]] = 1;
+      str1Obj[str1Arr[i]] = 1;
     }
   }
-  for (let i = 0; i < str2.length; i++) {
-    if (str2Hash[str2[i]]) {
-      str2Hash[str2[i]] += 1;
+  for (let i = 0; i < str2Arr.length; i++) {
+    if (str2Obj[str2Arr[i]]) {
+      str2Obj[str2Arr[i]]++;
     } else {
-      str2Hash[str2[i]] = 1;
+      str2Obj[str2Arr[i]] = 1;
     }
   }
-  for (let key in str1Hash) {
-    if (str1Hash[key] !== str2Hash[key]) {
-      return "Bukan Anagram";
+  for (let key in str1Obj) {
+    if (str1Obj[key] !== str2Obj[key]) {
+      result = "Bukan Anagram";
+      break;
+    } else {
+      result = "Anagram";
     }
   }
-  return "Anagram";
+  return result;
 }
 
 console.log(anagramChecker("keen", "knee"));

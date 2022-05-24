@@ -15,8 +15,8 @@ const PodcastLists = () => {
 
   const getPodcastListData = async () => {
     // TODO: answer here
-    const response = await axios.get(Constants.API_URL + "/podcasts");
-    setPodcastList(response.data);
+    const { data } = await axios.get(Constants.API_URL + "/podcasts");
+    setPodcastList(data);
   };
 
   useEffect(() => {
@@ -37,15 +37,16 @@ const PodcastLists = () => {
         </Button>
         {podcastList.map((item) => {
           // TODO: answer here
-          return;
-          <PodcastListItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            setFormModalType={setFormModalType}
-            setPodcastId={setPodcastId}
-            setShowFormModal={setShowFormModal}
-          />;
+          return (
+            <PodcastListItem
+              key={item.id}
+              id={item.id}
+              podcastItem={item}
+              setFormModalType={setFormModalType}
+              setShowFormModal={setShowFormModal}
+              setPodcastId={setPodcastId}
+            />
+          );
         })}
       </div>
       <PodcastFormModal

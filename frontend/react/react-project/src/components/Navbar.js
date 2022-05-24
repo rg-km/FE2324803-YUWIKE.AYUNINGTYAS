@@ -16,6 +16,7 @@ export default function Navbar() {
       <div aria-label="App Logo">
         <img src="logo192.png" alt="App Logo" />
       </div>
+      <button aria-label="Login">Login</button>
     </nav>
   );
 }

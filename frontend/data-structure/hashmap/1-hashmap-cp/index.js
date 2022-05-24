@@ -12,11 +12,10 @@ function groupByAge(persons) {
   let result = new Map();
   // TODO: answer here
   for (let person of persons) {
-    let age = person.age;
-    if (result.has(age)) {
-      result.set(age, [...result.get(age), person]);
+    if (result.has(person.age)) {
+      result.get(person.age).push(person);
     } else {
-      result.set(age, [person]);
+      result.set(person.age, [person]);
     }
   }
   return result;

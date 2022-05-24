@@ -25,21 +25,24 @@ const PodcastFormModal = (props) => {
 
   const handleFormSubmit = async () => {
     // TODO: answer here
-    if (formModalType === "ADD") {
-    }
-    try {
-      const response = await axios.post(
+    if (formModalType === "CREATE") {
+      const { data } = await axios.post(
         Constants.API_URL + "/podcasts",
         formValues
       );
-      if (response.status === 201) {
-        setPodcastList([...podcastList, response.data]);
-        setFormValues({});
-        setShowFormModal(false);
-      }
-    } catch (error) {
-      console.log(error);
+      setPodcastList([...podcastList, data]);
     }
+    if (formModalType === "UPDATE") {
+      const { data } = await axios.put(
+        Constants.API_URL + "/podcasts/" + podcastId,
+        formValues
+      );
+      const newPodcastList = podcastList.map((podcast) =>
+        podcast.id === podcastId ? data : podcast
+      );
+      setPodcastList(newPodcastList);
+    }
+    setShowFormModal(false);
   };
 
   const onCloseModal = () => {
@@ -69,7 +72,7 @@ const PodcastFormModal = (props) => {
     if (formModalType === "UPDATE") {
       getPodcastById();
     }
-  }, [showFormModal]);
+  }, [formModalType, podcastId]);
 
   return (
     <Modal show={showFormModal} onHide={onCloseModal}>

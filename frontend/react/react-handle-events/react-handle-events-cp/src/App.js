@@ -1,12 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import PodcastLists from './Screens/PodcastLists';
-
+import PodcastLists from "./Screens/PodcastLists";
 
 function App() {
   return (
     <div>
-      <PodcastLists/>
+      <PodcastLists />
     </div>
   );
 }

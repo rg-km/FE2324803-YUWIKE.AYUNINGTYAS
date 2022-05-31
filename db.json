@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Aditya",
+      "last_name": "Jamhuri",
+      "email": "aditya@ruangguru.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "anna@ruangguru.com"
+    }
+  ]
+}

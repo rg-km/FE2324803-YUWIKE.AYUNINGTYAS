@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "./App.css";
 
 export default function App() {
   return <RandomQuote />;
@@ -6,20 +7,12 @@ export default function App() {
 
 export function RandomQuote() {
   // TODO: answer here
-  const [quote, setQuote] = React.useState("");
-  const [author, setAuthor] = React.useState("");
+  const [quote, setQuote] = useState("");
+  const [loading, setLoading] = useState(false);
   React.useEffect(() => {
     // TODO: answer here
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json"
-      );
-      const data = await response.json();
-      const randomQuote =
-        data.quotes[Math.floor(Math.random() * data.quotes.length)];
-      setQuote(randomQuote.quote);
-      setAuthor(randomQuote.author);
-    };
+    getQuote();
+    console.log("called useEfdfec");
   }, []);
 
   function getQuote() {
@@ -31,6 +24,25 @@ export function RandomQuote() {
   }
 
   // TODO: answer here
-  const [loading, setLoading] = React.useState(false);
-  getQuote();
+  return (
+    <div>
+      <h1 className={"bg-warning mt-3"}>Random Quote</h1>
+      <div
+        className={
+          "border border-warning rounded w-50 mx-auto mt-5 d-flex justify-content-center flex-column p-3"
+        }
+      >
+        <h2 data-testid="quote">{loading ? "Loading..." : quote.content}</h2>
+        <p>~ {loading ? " " : quote.author}</p>
+        <button
+          onClick={() => {
+            getQuote();
+          }}
+          className={"btn btn-outline-primary position-relative"}
+        >
+          Get another quote
+        </button>
+      </div>
+    </div>
+  );
 }
